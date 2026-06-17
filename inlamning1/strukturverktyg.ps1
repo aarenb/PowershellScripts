@@ -1,8 +1,7 @@
 # Create directories for a user
 function CreateUserDirectories {
     param (
-        [string]$name,
-        $date
+        [string]$name
     )
 
     try {
@@ -17,7 +16,7 @@ function CreateUserDirectories {
 }
 
 #Create a log file for user with current date & time
-function CreateLogFile {
+cfunction CreateLogFile {
     param (
         [string]$name,
         $date,
@@ -38,7 +37,7 @@ function Main {
         $date = (Get-Date -Format "yyyy-MM-dd").toString()
         $time = (Get-Date -Format "HH:mm").toString()
 
-        CreateUserDirectories -name $name -date $date 
+        CreateUserDirectories -name $name
         CreateLogFile -name $name -date $date -time $time
     }
     catch {
