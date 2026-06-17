@@ -16,7 +16,7 @@ function CreateUserDirectories {
 }
 
 #Create a log file for user with current date & time
-cfunction CreateLogFile {
+function CreateLogFile {
     param (
         [string]$name,
         $date,
